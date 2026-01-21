@@ -2,7 +2,7 @@ import Link from "next/link";
 import Container from "./Container";
 import { LogOut, Settings, User } from "lucide-react";
 import { Avatar } from "./ui/avatar";
-import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { AvatarFallback } from "@radix-ui/react-avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,

@@ -15,15 +15,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
-
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-];
+import { monthlyVisitorsMock } from "@/data/mock-data";
+import { MonthlyVisitors } from "@/types";
 
 const chartConfig = {
   desktop: {
@@ -36,7 +29,13 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function AppAreaChart() {
+type AppAreaChartProps = {
+  data?: MonthlyVisitors[];
+};
+
+export default function AppAreaChart({ data }: AppAreaChartProps) {
+  const chartData = data ?? monthlyVisitorsMock;
+
   return (
     <>
       <div className="h-full">
